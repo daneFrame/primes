@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+// Declare your functions here
+bool isPrime(int input1, int input2){
+    int result;
+    do{
+        if (input1 > 3 && input1 != 2){
+            if ((input1 % 2 != 0) && (input1 % 3 !=0)){
+            return 1;
+            }
+        }
+        sumOfPrimes(input1, input2);
+        input1++;
+    } while (input1 < input2 )
+    
+}
+
+int sumOfPrimes(int input1,int input2){
+    isPrime(input1, input2);
+    int sum;
+    sum = input1 + input1;
+    if(input1 == input2)
+    {
+        return sum;
+    }
+}
+
+int main() {
+    
+    // Your code here
+
+    scanf("%d", &input1);
+    scanf("%d", &input2);
+
+    if ((input1 < input2) || (input1 >= 0) || (input2 >= 0)){
+    sumOfPrimes(input1, input2);
+    }
+    else {
+        printf("Invalid input\n");
+    }
+
+    
+    return 0;
+}
