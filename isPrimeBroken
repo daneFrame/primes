@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+// Declare your functions here
+/*int isPrime(int input1, int input2){
+    //printf("DEBUG: Made it into isPrime\n");
+    int result, i;
+
+
+
+    for (i = input1; i < input2; i++)
+    {
+        if (input1 > 3 && input1 != 2){
+            if ((input1 % 2 != 0) && (input1 % 3 !=0)){
+                printf("DEBUG: i is %d\n", i);
+                    sumOfPrimes(i);
+            }
+        }
+        printf("DEBUG: i is %d\n", i);
+        
+        
+    }
+
+    /*do{
+        if (input1 > 3 && input1 != 2){
+            if ((input1 % 2 != 0) && (input1 % 3 !=0)){
+            return 1;
+            }
+        }
+        sumOfPrimes(input1, input2);
+        input1++;
+    } while (input1 < input2 )*/
+
+int isPrime(int i){
+    printf("DEBUG: isPrime received i value of %d\n", i);
+
+    if ((i % 2 != 0) && (i % 3 !=0)){
+                printf("DEBUG in isPrime: i is %d\n", i);
+                 return i;
+            }
+            else {
+                return 0;
+            }
+
+}
+
+int sumOfPrimes(int input1,int input2){
+    //printf("DEBUG: Made it into sumOfPrimes\n");
+    int i, sum;
+    
+    if (input1 == 1){
+        sum = 6;
+        input1 = 4;
+    }
+    if (input1 == 2){
+        
+        sum = 5;
+        printf("DEBUG: sumOfPrimes if statement sum is %d\n", sum);
+        input1 = 4;
+    }
+    if (input1 == 3){
+        sum = 3;
+        input1 = 4;
+    }
+    
+    
+    for (i = 4; i < input2; i++)
+    {
+        //printf("DEBUG: input2 is %d\n", input2);
+        printf("DEBUG: sum is %d\n", sum);
+            isPrime(i);
+            printf("DEBUG: isPrime returned %d\n", i);
+
+            sum = sum + i;
+        
+        printf("DEBUG: i is %d\n", i);
+        
+        
+    }
+    
+    sum = i + i;
+    printf("DEBUG: sum is %d\n", sum);
+    if(input1 == input2)
+    {
+        return sum;
+    }
+}
+
+int main() {
+    
+    // Your code here
+
+    int input1, input2;
+
+    scanf("%d", &input1);
+    scanf("%d", &input2);
+
+    if ((input1 < input2) && (input1 >= 0) && (input2 >= 0)){
+    sumOfPrimes(input1, input2);
+    }
+    else {
+        printf("Invalid input\n");
+    }
+
+    
+    return 0;
+}
