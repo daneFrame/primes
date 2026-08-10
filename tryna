@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <math.h>
+
+int sum = 0, number;
+
+
+
+int isPrime(int i, int number){
+    printf("DEBUG: i in isPrime is %d\n", i);
+    printf("DEBUG: isPrime i mod is %d\n", i % 2);
+    if ((i % 2 == 0) || (i % 3 == 0)){
+        //printf("DEBUG: into 1st isPrime loop\n");
+        number = 0;
+    } else {
+    //if((i % 2 != 0) && (i % 3 == 0)){
+        //printf("DEBUG: into 2nd isPrime loop\n");
+        number = i;
+    }
+    
+    printf("DEBUG: number is %d\n", number);
+    return number;
+}
+
+int sumOfPrimes(int input1, int input2){
+
+    for (int i = input1; i < input2; i++){
+        if(i > 3){
+            //printf("DEBUG: Made it into the for loop\n");
+            //return i;
+            //printf("%d\n", i);
+            isPrime(i, number);
+        }
+        //isPrime(i);
+        printf("DEBUG: number is %d\n", number);
+        sum = sum + number;
+    }
+
+    printf("The sum is %d", sum);
+
+}
+
+
+int main() {
+    int input1, input2;
+    scanf("%d\n", &input1);
+    scanf("%d\n", &input2);
+
+    if ((input1 >= input2) || input1 < 0 || input2 < 0){
+        printf("Invalid input\n");
+        return 0;
+    }
+
+    sumOfPrimes(input1, input2);
+    return 0;
+}
